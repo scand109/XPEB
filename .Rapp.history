@@ -1,0 +1,1167 @@
+names(beta0)#
+par(mfcol=c(3,4))#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")
+names(beta0)#
+par(mfcol=c(3,4))#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")
+load('~/Desktop/workTransfer/EB/realData/betaMatrices.HDL.100kb.Rdata')#
+#calculate the p(target is null)#
+p.basenonNull <- exp(beta0+beta1)/(1+exp(beta0+beta1))#
+p.baseNull <- exp(beta0)/(1+exp(beta0))#
+#
+beta0F <- beta0[101,]#
+beta1F <- beta1[101,]#
+p.basenonNullF <- p.basenonNull[101,]#
+p.baseNullF <- p.baseNull[101,]#
+#
+beta0 <- beta0[1:100,]#
+beta1 <- beta1[1:100,]#
+p.basenonNull <- p.basenonNull[1:100,]#
+p.baseNull <- p.baseNull[1:100,]#
+names(beta0)#
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")
+summary(beta0[1:100,])
+summary(beta1[1:100,])
+var(beta0[1:100,1])#
+var(beta0[1:100,2])#
+var(beta0[1:100,3])
+var(beta1[1:100,1])#
+var(beta1[1:100,2]) #
+var(beta1[1:100,3])
+summary(p.basenonNull)
+var(p.basenonNull[1:100,1]) #
+var(p.basenonNull[1:100,2]) #
+var(p.basenonNull[1:100,3])
+summary(p.baseNull)
+var(p.baseNull[1:100,1]) #
+var(p.baseNull[1:100,2]) #
+var(p.baseNull[1:100,3])
+beta0F
+beta1F
+p.basenonNullF
+p.baseNullF
+load('~/Desktop/workTransfer/EB/realData/results/fullDataRes.100kb.Rdata')#
+head(stati)#
+results<-stati#
+table(results$ceb.fdr.pool<0.05) #109#
+table(results$ceb.fdr.nopool<0.05) #48#
+table(results$ceb.fdr.joint<0.05) #111
+load('~/Desktop/workTransfer/EB/realData/fullDataRes.100kb.Rdata')#
+head(stati)#
+results<-stati#
+table(results$ceb.fdr.pool<0.05) #109#
+table(results$ceb.fdr.nopool<0.05) #48#
+table(results$ceb.fdr.joint<0.05) #111
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")
+plot(beta0[,1],beta1[,1])
+par(mfrow(2,2))#
+plot(beta0[,"pool"],beta1[,"pool"])#
+plot(beta0[,"nopool"],beta1[,"nopool"])#
+plot(beta0[,"joint"],beta1[,"joint"])
+par(mfrow=c(2,2))#
+plot(beta0[,"pool"],beta1[,"pool"])#
+plot(beta0[,"nopool"],beta1[,"nopool"])#
+plot(beta0[,"joint"],beta1[,"joint"])
+par(mfrow=c(2,2))#
+plot(beta0[,"pool"],beta1[,"pool"],xlab="beta0",ylab="beta1",main="pool bootstrap")#
+plot(beta0[,"nopool"],beta1[,"nopool"],xlab="beta0",ylab="beta1",main="nopool bootstrap")#
+plot(beta0[,"joint"],beta1[,"joint"],xlab="beta0",ylab="beta1",main="joint bootstrap")
+load('~/Desktop/workTransfer/EB/realData/betaMatrices.HDL.Rdata')#
+#calculate the p(target is null)#
+p.basenonNull <- exp(beta0+beta1)/(1+exp(beta0+beta1))#
+p.baseNull <- exp(beta0)/(1+exp(beta0))
+beta0F <- beta0[101,]#
+beta1F <- beta1[101,]#
+p.basenonNullF <- p.basenonNull[101,]#
+p.baseNullF <- p.baseNull[101,]#
+#
+beta0 <- beta0[1:100,]#
+beta1 <- beta1[1:100,]#
+p.basenonNull <- p.basenonNull[1:100,]#
+p.baseNull <- p.baseNull[1:100,]
+names(beta0)#
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")
+summary(beta0[1:100,])
+summary(beta1[1:100,])
+var(beta0[1:100,1])#
+var(beta0[1:100,2])#
+var(beta0[1:100,3])#
+#
+var(beta1[1:100,1])#
+var(beta1[1:100,2]) #
+var(beta1[1:100,3])
+summary(p.basenonNull)
+var(p.basenonNull[1:100,1]) #
+var(p.basenonNull[1:100,2]) #
+var(p.basenonNull[1:100,3])
+summary(p.baseNull)
+var(p.baseNull[1:100,1]) #
+var(p.baseNull[1:100,2]) #
+var(p.baseNull[1:100,3])
+load('~/Desktop/workTransfer/EB/realData/fullDataRes.Rdata')#
+head(stati)#
+results<-stati#
+table(results$ceb.fdr.pool<0.05) #109#
+table(results$ceb.fdr.nopool<0.05) #48#
+table(results$ceb.fdr.joint<0.05) #111
+load('~/Desktop/workTransfer/EB/realData/results/fullDataRes.Rdata')#
+head(stati)#
+results<-stati#
+table(results$ceb.fdr.pool<0.05) #109#
+table(results$ceb.fdr.nopool<0.05) #48#
+table(results$ceb.fdr.joint<0.05) #111
+par(mfrow=c(2,2))#
+plot(beta0[,"pool"],beta1[,"pool"],xlab="beta0",ylab="beta1",main="pool bootstrap")#
+plot(beta0[,"nopool"],beta1[,"nopool"],xlab="beta0",ylab="beta1",main="nopool bootstrap")#
+plot(beta0[,"joint"],beta1[,"joint"],xlab="beta0",ylab="beta1",main="joint bootstrap")
+beta0F
+beta1F
+p.basenonNullF
+p.baseNullF
+load('~/Desktop/workTransfer/EB/sim.withLD/betaMatrices.Rdata')#
+#
+par(mfcol=c(3,2))#
+hist(beta0[,1],main="nopool beta0",xlim=c(-8.5,-5))#
+abline(v=beta0[101,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-8.5,-5))#
+abline(v=beta0[101,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+hist(beta0[,3],main="joint beta0",xlim=c(-8.5,-5))#
+abline(v=beta0[101,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(5,8))#
+abline(v=beta1[101,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(5,8))#
+abline(v=beta1[101,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+#
+hist(beta1[,3],main="joint beta1",xlim=c(5,8))#
+abline(v=beta1[101,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#
+summary(beta0)#
+     # nopool            pool            joint       #
+ # Min.   :-8.364   Min.   :-6.886   Min.   :-7.842  #
+ # 1st Qu.:-7.593   1st Qu.:-6.171   1st Qu.:-6.866  #
+ # Median :-7.357   Median :-6.005   Median :-6.653  #
+ # Mean   :-7.359   Mean   :-6.044   Mean   :-6.642  #
+ # 3rd Qu.:-7.137   3rd Qu.:-5.912   3rd Qu.:-6.280  #
+ # Max.   :-6.690   Max.   :-5.575   Max.   :-5.714  #
+#
+summary(beta1)#
+     # nopool           pool           joint      #
+ # Min.   :5.350   Min.   :5.335   Min.   :5.986  #
+ # 1st Qu.:5.798   1st Qu.:5.725   1st Qu.:6.571  #
+ # Median :5.979   Median :5.899   Median :6.836  #
+ # Mean   :5.992   Mean   :5.918   Mean   :6.875  #
+ # 3rd Qu.:6.175   3rd Qu.:6.090   3rd Qu.:7.146  #
+ # Max.   :6.796   Max.   :6.891   Max.   :7.914  #
+#
+var(beta0[,1])#0.1129289   no pool#
+var(beta0[,2]) #0.05603267 pool#
+var(beta0[,3]) # 0.1879972 joint#
+#
+var(beta1[,1])#0.07261995   no pool#
+var(beta1[,2]) #0.07737039  pool#
+var(beta1[,3]) # 0.1807859  joint#
+#calculate the p(target is null)#
+p.basenonNull <- exp(beta0+beta1)/(1+exp(beta0+beta1))#
+p.baseNull <- exp(beta0)/(1+exp(beta0))#
+par(mfcol=c(3,4))#
+#beta0#
+hist(beta0[,1],main="nopool beta0",xlim=c(-8.5,-5))#
+abline(v=beta0[101,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-8.5,-5))#
+abline(v=beta0[101,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+hist(beta0[,3],main="joint beta0",xlim=c(-8.5,-5))#
+abline(v=beta0[101,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+#beta1#
+hist(beta1[,1],main="nopool beta1",xlim=c(5,8))#
+abline(v=beta1[101,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(5,8))#
+abline(v=beta1[101,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+#
+hist(beta1[,3],main="joint beta1",xlim=c(5,8))#
+abline(v=beta1[101,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNull[101,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNull[101,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNull[101,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNull[101,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNull[101,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNull[101,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")#
+var(p.basenonNull[,1]) #0.0009309262#
+var(p.basenonNull[,2]) #0.001064825#
+var(p.basenonNull[,3]) #0.004190705#
+var(p.baseNull[,1]) # 4.6e-08#
+var(p.baseNull[,2]) #3.033163e-07#
+var(p.baseNull[,3]) #3.351925e-07
+p.basenonNull <- exp(beta0+beta1)/(1+exp(beta0+beta1))#
+p.baseNull <- exp(beta0)/(1+exp(beta0))#
+beta0F <- beta0[101,]#
+beta1F <- beta1[101,]#
+p.basenonNullF <- p.basenonNull[101,]#
+p.baseNullF <- p.baseNull[101,]#
+#
+beta0 <- beta0[1:100,]#
+beta1 <- beta1[1:100,]#
+p.basenonNull <- p.basenonNull[1:100,]#
+p.baseNull <- p.baseNull[1:100,]
+dim(beta0)
+dim(beta1)
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")
+summary(beta0[1:100,])
+summary(beta1[1:100,])
+names(beta0)#
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-9,-5))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-9,-5))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-9,-5))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(5,8))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(5,8))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(5,8))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")
+var(beta0[1:100,1])#
+var(beta0[1:100,2])#
+var(beta0[1:100,3])#
+#
+var(beta1[1:100,1])#
+var(beta1[1:100,2]) #
+var(beta1[1:100,3])
+summary(p.basenonNull)
+var(p.basenonNull[1:100,1]) #
+var(p.basenonNull[1:100,2]) #
+var(p.basenonNull[1:100,3])
+summary(p.baseNull)
+var(p.baseNull[1:100,1]) #
+var(p.baseNull[1:100,2]) #
+var(p.baseNull[1:100,3])
+par(mfrow=c(2,2))#
+plot(beta0[,"pool"],beta1[,"pool"],xlab="beta0",ylab="beta1",main="pool bootstrap")#
+plot(beta0[,"nopool"],beta1[,"nopool"],xlab="beta0",ylab="beta1",main="nopool bootstrap")#
+plot(beta0[,"joint"],beta1[,"joint"],xlab="beta0",ylab="beta1",main="joint bootstrap")
+sum(resBoot<0.05)
+postGt95 <- matrix(NA,ncol=3,nrow=100)#
+postGt95 <- as.data.frame(postGt95 )#
+names(postGt95 ) <- c("nopool","pool","joint")#
+postGt95[1,1] <- sum(resBoot[,1]<0.05)#
+postGt95[1,2] <- sum(resBoot[,2]<0.05)#
+postGt95[1,3] <- sum(resBoot[,3]<0.05)
+postGt95 <- matrix(NA,ncol=3,nrow=100)#
+postGt95 <- as.data.frame(postGt95 )#
+names(postGt95 ) <- c("nopool","pool","joint")#
+postGt95[1,1] <- sum(resBoot[,2]<0.05)#
+postGt95[1,2] <- sum(resBoot[,3]<0.05)#
+postGt95[1,3] <- sum(resBoot[,4]<0.05)
+head(results)
+dim(results)
+counts <- matrix(NA,nrow=100,ncol=9)#
+counts <- as.data.frame(counts)
+load('~/Desktop/workTransfer/EB/realData/betaMatrices.HDL.100kb.Rdata')#
+#calculate the p(target is null)#
+p.basenonNull <- exp(beta0+beta1)/(1+exp(beta0+beta1))#
+p.baseNull <- exp(beta0)/(1+exp(beta0))#
+#
+beta0F <- beta0[101,]#
+beta1F <- beta1[101,]#
+p.basenonNullF <- p.basenonNull[101,]#
+p.baseNullF <- p.baseNull[101,]#
+#
+beta0 <- beta0[1:100,]#
+beta1 <- beta1[1:100,]#
+p.basenonNull <- p.basenonNull[1:100,]#
+p.baseNull <- p.baseNull[1:100,]#
+names(beta0)#
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")#
+# > summary(beta0[1:100,])#
+     # nopool             pool
+summary(beta0[1:100,])
+summary(beta1[1:100,])
+load('~/Desktop/workTransfer/EB/realData/betaMatrices.HDL.100kb.Rdata')#
+#calculate the p(target is null)#
+p.basenonNull <- exp(beta0+beta1)/(1+exp(beta0+beta1))#
+p.baseNull <- exp(beta0)/(1+exp(beta0))#
+#
+beta0F <- beta0[101,]#
+beta1F <- beta1[101,]#
+p.basenonNullF <- p.basenonNull[101,]#
+p.baseNullF <- p.baseNull[101,]#
+#
+beta0 <- beta0[1:100,]#
+beta1 <- beta1[1:100,]#
+p.basenonNull <- p.basenonNull[1:100,]#
+p.baseNull <- p.baseNull[1:100,]#
+names(beta0)#
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")#
+#
+summary(beta0[1:100,])
+load('~/Desktop/workTransfer/EB/sim.withLD/postGT95.Rdata')
+ls()
+head(postGt95)
+head(counts)
+summary(counts)
+load('~/Desktop/workTransfer/EB/realData/betaMatrices.HDL.100kb.Rdata')#
+#calculate the p(target is null)#
+p.basenonNull <- exp(beta0+beta1)/(1+exp(beta0+beta1))#
+p.baseNull <- exp(beta0)/(1+exp(beta0))
+beta0F <- beta0[101,]#
+beta1F <- beta1[101,]#
+p.basenonNullF <- p.basenonNull[101,]#
+p.baseNullF <- p.baseNull[101,]#
+#
+beta0 <- beta0[1:100,]#
+beta1 <- beta1[1:100,]#
+p.basenonNull <- p.basenonNull[1:100,]#
+p.baseNull <- p.baseNull[1:100,]#
+names(beta0)#
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")#
+#
+summary(beta0[1:100,])
+load('~/Desktop/workTransfer/EB/realData/betaMatrices.HDL.100kb.Rdata')#
+#calculate the p(target is null)#
+p.basenonNull <- exp(beta0+beta1)/(1+exp(beta0+beta1))#
+p.baseNull <- exp(beta0)/(1+exp(beta0))
+beta0F <- beta0[101,]#
+beta1F <- beta1[101,]#
+p.basenonNullF <- p.basenonNull[101,]#
+p.baseNullF <- p.baseNull[101,]#
+#
+beta0 <- beta0[1:100,]#
+beta1 <- beta1[1:100,]#
+p.basenonNull <- p.basenonNull[1:100,]#
+p.baseNull <- p.baseNull[1:100,]#
+names(beta0)#
+par(mfcol=c(3,4))#
+#
+hist(beta0[,1],main="nopool beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,1],col="red")#
+abline(v=median(beta0[,1]),col="blue")#
+legend("topright",fill=c("red","blue"),c("fullDataset","median of BT"))#
+#
+hist(beta0[,2],main="pool beta0",xlim=c(-18,-6))
+abline(v=beta0F[1,2],col="red")#
+abline(v=median(beta0[,2]),col="blue")#
+#
+hist(beta0[,3],main="joint beta0",xlim=c(-18,-6))#
+abline(v=beta0F[1,3],col="red")#
+abline(v=median(beta0[,3]),col="blue")#
+#
+hist(beta1[,1],main="nopool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,1],col="red")#
+abline(v=median(beta1[,1]),col="blue")#
+#
+hist(beta1[,2],main="pool beta1",xlim=c(6,19))#
+abline(v=beta1F[1,2],col="red")#
+abline(v=median(beta1[,2]),col="blue")#
+hist(beta1[,3],main="joint beta1",xlim=c(6,19))#
+abline(v=beta1F[1,3],col="red")#
+abline(v=median(beta1[,3]),col="blue")#
+#p.basenonNull#
+hist(p.basenonNull[,1],main="nopool p/basenonNull")#
+abline(v=p.basenonNullF[1,1],col="red")#
+abline(v=median(p.basenonNull[,1]),col="blue")#
+#
+hist(p.basenonNull[,2],main="pool p/basenonNull")#
+abline(v=p.basenonNullF[1,2],col="red")#
+abline(v=median(p.basenonNull[,2]),col="blue")#
+#
+hist(p.basenonNull[,3],main="joint p/basenonNull")#
+abline(v=p.basenonNullF[1,3],col="red")#
+abline(v=median(p.basenonNull[,3]),col="blue")#
+#
+#p.basenonNull#
+hist(p.baseNull[,1],main="nopool p/baseNull")#
+abline(v=p.baseNullF[1,1],col="red")#
+abline(v=median(p.baseNull[,1]),col="blue")#
+#
+hist(p.baseNull[,2],main="pool p/baseNull")#
+abline(v=p.baseNullF[1,2],col="red")#
+abline(v=median(p.baseNull[,2]),col="blue")#
+#
+hist(p.baseNull[,3],main="joint p/baseNull")#
+abline(v=p.baseNullF[1,3],col="red")#
+abline(v=median(p.baseNull[,3]),col="blue")#
+#
+summary(beta0[1:100,])#
+     # nopool             pool             joint       #
+ # Min.   :-17.841   Min.   :-16.729   Min.   :-9.086  #
+ # 1st Qu.:-16.281   1st Qu.:-14.977   1st Qu.:-8.745  #
+ # Median :-14.978   Median :-13.231   Median :-8.576  #
+ # Mean   :-13.862   Mean   :-12.008   Mean   :-8.561  #
+ # 3rd Qu.:-10.863   3rd Qu.: -8.593   3rd Qu.:-8.415  #
+ # Max.   : -8.472   Max.   : -6.191   Max.   :-7.599  #
+#
+# > summary(beta1[1:100,])
+summary(beta1[1:100,])
+var(beta0[1:100,1])#
+var(beta0[1:100,2])#
+var(beta0[1:100,3])#
+#
+var(beta1[1:100,1])#
+var(beta1[1:100,2]) #
+var(beta1[1:100,3])
+summary(p.basenonNull)#
+     # nopool             pool            joint
+var(p.basenonNull[1:100,1]) #
+var(p.basenonNull[1:100,2]) #
+var(p.basenonNull[1:100,3])
+summary(p.baseNull)
+var(p.baseNull[1:100,1]) #
+var(p.baseNull[1:100,2]) #
+var(p.baseNull[1:100,3])
+#count number of loci with post>0.95#
+load('~/Desktop/workTransfer/EB/realData/fullDataRes.100kb.Rdata')#
+head(stati)#
+results<-stati#
+table(results$ceb.fdr.pool<0.05) #109#
+table(results$ceb.fdr.nopool<0.05) #48#
+table(results$ceb.fdr.joint<0.05) #111
+par(mfrow=c(2,2))#
+plot(beta0[,"pool"],beta1[,"pool"],xlab="beta0",ylab="beta1",main="pool bootstrap")#
+plot(beta0[,"nopool"],beta1[,"nopool"],xlab="beta0",ylab="beta1",main="nopool bootstrap")#
+plot(beta0[,"joint"],beta1[,"joint"],xlab="beta0",ylab="beta1",main="joint bootstrap")
+counts[1,"countPostGT95.nopool"] <- sum(resBoot$eb.nopool<0.05)#
+counts[1,"countPostGT95.pool"] <- sum(resBoot$eb.pool<0.05)#
+counts[1,"countPostGT95.joint"] <- sum(resBoot$eb.joint<0.05)
+load('~/Desktop/workTransfer/EB/realData/postGT95.Rdata')
+summary(counts)
+par(mfrow=c(1,3))#
+hist(counts[,1],xlab="SNP with post>0.95",main="nopool")#
+hist(counts[,1],xlab="SNP with post>0.95",main="pool")#
+hist(counts[,1],xlab="SNP with post>0.95",main="joint")
+par(mfrow=c(1,3))#
+hist(counts[,1],xlab="SNP with post>0.95",main="nopool")#
+hist(counts[,2],xlab="SNP with post>0.95",main="pool")#
+hist(counts[,3],xlab="SNP with post>0.95",main="joint")
+par(mfrow=c(1,3))#
+hist(counts[,1],xlab="Nbr SNP with post>0.95",main="nopool")#
+hist(counts[,2],xlab="Nbr SNP with post>0.95",main="pool")#
+hist(counts[,3],xlab="Nbr SNP with post>0.95",main="joint")
+plot(counts)
+for(i in 2:100){#
+	file=paste("repeat100.HDL/res.run",i,".Rdata",sep="")#
+	if(file.exists(file)){#
+	load(paste("repeat100.HDL/res.run",i,".Rdata",sep=""))#
+	res[i,1] <- betasCoeff.nopool[1]#
+	res[i,2] <- betasCoeff.nopool[2]#
+	res[i,3] <- betasCoeff.pool[1]#
+	res[i,4] <- betasCoeff.pool[2]#
+	res[i,5] <- betasCoeff.joint[1]#
+	res[i,6] <- betasCoeff.joint[2]#
+	res[i,7] <- gt95.nopool#
+	res[i,8] <- gt95.pool#
+	res[i,9] <- gt95.joint#
+	}#
+}
+load('~/Desktop/workTransfer/EB/realData/repeat68.Rdata')
+res
+res <-res[!is.na(res[,1])]
+res <-res[!is.na(res[,1]),]
+res
+summary(res)
+res$nopool.p <- exp(res$b0.nopool+res$b1.nopool)/(1+exp(res$b0.nopool+res$b1.nopool))
+res$nopool.p <- exp(res$b0.nopool+res$b1.nopool)/(1+exp(res$b0.nopool+res$b1.nopool))#
+res$pool.p <- exp(res$b0.pool+res$b1.pool)/(1+exp(res$b0.pool+res$b1.pool))#
+res$joint.p <- exp(res$b0.joint+res$b1.joint)/(1+exp(res$b0.joint+res$b1.joint))
+summary(res)
+40*40
+1600*52
+90/3
+80/3
+10.5*35
+367*1.16
+22/312
+16*6
+?round
+round(12.35,digits=1)
+round(13.35,digits=1)
+round(14.35,digits=1)
+round(14.351,digits=1)
+round(12.350,digits=1)
+round(13.35,digits=1)
+round(12.35,digits=1)
+round(121.75,digits=1)
+round(206.15,digits=1)
+round(200.95,digits=1)
+round(215.55,digits=1)
+round(423.75,digits=1)
+round(187.15,digits=1)
+round(153.45,digits=1)
+round(134.05,digits=1)
+round(178.25,digits=1)
+round(191.25,digits=1)
+round(255.55,digits=1)
+891*6
+5346+12525
+(156/159)*0.02
+(156/159)*0.02+3/159
+(156/161)*0.02+5/159
+82/30
+82/30000
+(82/30000)^2
+192+82
+3/274
+82/274
+52/30
+2/300
+1000000/30000
+175/7
+180/33
+search()
+library(XPEB)
+search()
+load('~/Desktop/workTransfer/chi.dat.small.RData')
+N.base=1e5#
+N.target=1e4#
+ceb.obj=analyzeArun5(dat=chi.dat, n.base=N.base, n.target=N.target,diagnostics=F)
+search()
+library(XPEB)
+ceb.obj=analyzeArun5(dat=chi.dat, n.base=N.base, n.target=N.target,diagnostics=F)
+load('~/Desktop/workTransfer/XPEB.aug21/data/chi.dat.RData')
+N.base=1e5#
+N.target=1e4#
+ceb.obj=analyzeArun5(dat=chi.dat, n.base=N.base, n.target=N.target,diagnostics=F)
+load('~/Desktop/workTransfer/XPEB.aug21/data/chi.dat.500K.RData')#
+source('~/Desktop/workTransfer/code/singleFile.R', chdir = TRUE)#
+N.base=1e5#
+N.target=1e4#
+ceb.obj=analyzeArun5(dat=chi.dat, n.base=N.base, n.target=N.target,diagnostics=F)#
+#
+#look at overlap#
+#number of hits:#
+	posterior= ceb.obj$eb[[2]]#
+	#it is the same as:#
+	#posterior2= eb.predict.postprob(dat=chi.dat, res=ceb.obj.share)#
+	betas=ceb.obj$eb[[1]]#
+table(posterior>0.95) #208#
+summary(posterior)#
+exp(betas[1]+betas[2])/(1+exp(betas[1]+betas[2])) #0.79
+load('~/Desktop/workTransfer/chi.dat.500K.RData')#
+source('~/Desktop/workTransfer/code/singleFile.R', chdir = TRUE)#
+N.base=1e5#
+N.target=1e4#
+ceb.obj=analyzeArun5(dat=chi.dat, n.base=N.base, n.target=N.target,diagnostics=F)#
+#
+#look at overlap#
+#number of hits:#
+	posterior= ceb.obj$eb[[2]]#
+	#it is the same as:#
+	#posterior2= eb.predict.postprob(dat=chi.dat, res=ceb.obj.share)#
+	betas=ceb.obj$eb[[1]]#
+table(posterior>0.95) #208#
+summary(posterior)#
+exp(betas[1]+betas[2])/(1+exp(betas[1]+betas[2])) #0.79
+data(chi.dat)
+dim(chi.dat)
+load("/Users/scand/Desktop/workTransfer/5.Sim.WithLD.GenoPheno/snpAnnot727K.Rdata")
+ls()
+head(legend)
+table(table(legend$windows))
+dim(legend)
+9*180
+3000-1620
+1620+650
+690+469+262+35+108
+300000*0.22
+300000-66000
+234000-255312
+median(c(1,2,Inf))
+median(c(1,2,3,Inf))
+median(c(1,1,1,1,1,1,1,1,1,2,3,Inf))
+180*9
+2250-1620
+data <- read.table("~/Desktop/workTransfer/analysesForPaper.6/real.base2013.targetAAwhi/paperWiller/jointGwasMc_HDL.txt",header=T,as.is=T)#
+#
+ldl <- read.table("~/Desktop/workTransfer/analysesForPaper.6/real.base2013.targetAAwhi/paperWiller/jointGwasMc_LDL.txt",header=T,as.is=T)#
+#
+tc <- read.table("~/Desktop/workTransfer/analysesForPaper.6/real.base2013.targetAAwhi/paperWiller/jointGwasMc_TC.txt",header=T,as.is=T)#
+#
+tg <- read.table("~/Desktop/workTransfer/analysesForPaper.6/real.base2013.targetAAwhi/paperWiller/jointGwasMc_TG.txt",header=T,as.is=T)#
+#
+dim(data)#
+dim(ldl)#
+dim(tg)#
+dim(tc)#
+#
+# [1] 2447441      10#
+# [1] 2437751      10#
+# [1] 2439432      10#
+# [1] 2446981      10#
+#
+length(unique(data$SNP_hg18))#
+length(unique(ldl$SNP_hg18))#
+length(unique(tg$SNP_hg18))#
+length(unique(tc$SNP_hg18))#
+#only tg has a problem : 182 dup, where the only difference is the freq: choose 1:#
+dup <- names(table(tg$SNP_hg18)[table(tg$SNP_hg18)>1])#
+sub <- tg[is.element(tg$SNP_hg18,dup),]#
+sub <- sub[order(sub$SNP_hg18),]#
+sub1 <- sub[seq(from=1, to =363,by=2),]#
+sub2 <- sub[seq(from=2, to =364,by=2),]#
+#the only difference is in the freq#
+#
+new.tg <- tg[!is.element(tg$SNP_hg18,dup),]#
+dim(new.tg)#
+new.tg <- rbind(new.tg,sub1)#
+#
+tg <- new.tg#
+dim(tg) #2439250      10#
+#
+length(unique(tg$SNP_hg18))
+summary(data$N)
+hist(data$N)
+hist(data$N,ylim=c(0,20000))
+summary(data$N)#
+  # Min. 1st Qu.  Median    Mean 3rd Qu.    Max. #
+  # 50000   92610   94290   95130   94310  187200
+summary(data$N[data$N<100000])
+head(data)
+snpHDL <- data$rsid[data$N>100000]
+length(snpHDL)
+summary(ldl$N)
+summary(ldl$N[ldl$N<100000])
+hist(ldl$N)
+hist(ldl$N,ylim=c(0,20000))
+snpLDL <- ldl$rsid[ldl$N>100000]
+length(snpLDL) #94603
+summary(tg$N[tg$N<100000])
+hist(tg$N,ylim=c(0,20000))
+snpTG <- tg$rsid[tg$N>100000]
+length(snpTG) #92703
+snp <- unique(c(snpHDL,snpLDL,snpTG))
+length(snp)
+length(snpHDL) #94603
+length(unique(snpHDL))
+mc <- read.table("~/Desktop/workTransfer/analysesForPaper.6/real.base2013.targetAAwhi/paperWiller/Mc_HDL.txt",header=T,as.is=T)#
+dim(mc) #120671     10
+head(mc)#
+summary(mc$N)
+table(is.element(snp,mc$rsid))
+mcHDL <- data[is.element(data$SNP_hg18,mc$SNP_hg18),]
+dim(mcHDL)
+summary(mcHDL$N)
+hist(mcHDL$N)
+load("/Users/scand/Desktop/workTransfer/analysesForPaper.6/real.base2013.targetAAwhi/whi.giant2013.pOnly.853K.Rdata")
+load('~/Desktop/workTransfer/analysesForPaper.6/real.base2013.targetAAwhi/whi.giant2013.pOnly.853K.Rdata')
+ls()
+head(data)
+summary(data$SNP[is.element(data$SNP,snpHDL)])
+summary(data$P.value.giant.hdl.2013[is.element(data$SNP,snpHDL)])
+length(data$P.value.giant.hdl.2013[is.element(data$SNP,snpHDL)])
+summary(data$P.value.giant.hdl.2013)#
+data$P.value.giant.hdl.2013[is.element(data$SNP,snpHDL)] <-NA
+summary(data$P.value.giant.hdl.2013)
+data$P.value.giant.ldl.2013[is.element(data$SNP,snpLDL)] <-NA
+summary(data$P.value.giant.ldl.2013)
+data$P.value.giant.tg.2013[is.element(data$SNP,snpTG)] <-NA
+summary(data$P.value.giant.ldl.2013)
+save(data,file="~/Desktop/workTransfer/analysesForPaper.6/real.base2013.targetAAwhi/whi.giant2013.pOnly.lt100K.Rdata")
+install.packages(“XPEB_0.91.tar.gz”, repos = NULL, type =‘‘source’’)
+install.packages(“XPEB_0.91.tar.gz”, repos = NULL, type="source")
+install.packages(“XPEB_0.91.tar.gz”,repos=NULL,type="source")
+?install.packages
+install.packages("XPEB_0.91.tar.gz",repos=NULL,type="source")
+?run.xpeb
+library(XPEB)
+?run.xpeb
+install.packages(XPEB)
+install.packages(MASS)
+install.packages("MASS")
+help(XPEB)
+?run.xpeb
+getwd()
+library(XPEB)#
+#
+#Retrieve input example from the package#
+path.target <- system.file("extdata", "target.gwas.txt.zip", package="XPEB")#
+unzip(path.target,exdir="TMPinput")#
+path.target <- "TMPinput/target.gwas.100K.txt"
+path.base <- system.file("extdata", "base.gwas.txt.zip", package="XPEB")#
+unzip(path.base,exdir="TMPinput")#
+path.base <- "TMPinput/base.gwas.100K.txt"
+res <- run.xpeb(path.target=path.target,path.base=path.base,n.target=10000,n.base=100000,gc.target=T,gc.base=T,n.iter=1e5)
+path.target
+path.target <- system.file("extdata", "target.gwas.txt.zip", package="XPEB")#
+unzip(path.target,exdir="TMPinput")
+path.target <- "TMPinput/target.gwas.txt"
+path.base <- system.file("extdata", "base.gwas.txt.zip", package="XPEB")#
+unzip(path.base,exdir="TMPinput")#
+path.base <- "TMPinput/base.gwas.txt"
+res <- run.xpeb(path.target=path.target,path.base=path.base,n.target=10000,n.base=100000,gc.target=T,gc.base=T,n.iter=1e5)
+path.target
+library(XPEB)
+example(XPEB)
+example("XPEB")
+citation("XPEB")
+help("citation")’
+help("citation")
+?example
+example(run.xpeb,package="XPEB")
+library(XPEB)
+?run.xpeb
+example(run.xpeb,package="XPEB")
